@@ -10,10 +10,10 @@ class App extends React.Component {
       invoices: []
     };
 
-    this.receiver = this.receiver.bind(this);
+    this.invoiceReceiver = this.invoiceReceiver.bind(this);
   }
 
-  receiver(invoice) {
+  invoiceReceiver(invoice) {
     this.setState({
       invoices: [...this.state.invoices, invoice]
     });
@@ -24,7 +24,7 @@ class App extends React.Component {
       <div>
         <SubmitForm
           invoiceID={this.state.invoices.length}
-          receiver={this.receiver}
+          invoiceReceiver={this.invoiceReceiver}
         />
         <Invoices invoices={this.state.invoices} />
       </div>

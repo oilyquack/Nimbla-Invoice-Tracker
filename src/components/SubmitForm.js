@@ -53,7 +53,7 @@ class SubmitForm extends React.Component {
       services: this.state.services
     };
 
-    this.props.receiver(invoice);
+    this.props.invoiceReceiver(invoice);
 
     this.setState({
       amount: "",
