@@ -12,6 +12,7 @@ class Invoices extends React.Component {
         {this.props.invoices.map(invoice => {
           return (
             <Invoice
+              key={invoice.id}
               invoiceId={invoice.id}
               amount={invoice.amount}
               payBy={invoice.payBy}
