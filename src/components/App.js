@@ -15,7 +15,7 @@ class App extends React.Component {
   receiver(invoice) {
     this.setState(
       {
-        invoices: [invoice, ...this.state.invoices]
+        invoices: [...this.state.invoices, invoice]
       },
       () => console.log(this.state.invoices)
     );
@@ -24,7 +24,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <SubmitForm receiver={this.receiver} />
+        <SubmitForm
+          invoiceID={this.state.invoices.length}
+          receiver={this.receiver}
+        />
       </div>
     );
   }

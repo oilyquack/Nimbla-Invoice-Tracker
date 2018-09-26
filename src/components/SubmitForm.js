@@ -46,6 +46,7 @@ class SubmitForm extends React.Component {
     event.preventDefault();
 
     const invoice = {
+      id: this.props.invoiceID,
       amount: this.state.amount,
       payBy: this.state.payBy,
       customer: this.state.customer,
@@ -53,6 +54,13 @@ class SubmitForm extends React.Component {
     };
 
     this.props.receiver(invoice);
+
+    this.setState({
+      amount: "",
+      payBy: "",
+      customer: "",
+      services: ""
+    });
   }
 
   render() {
@@ -64,6 +72,7 @@ class SubmitForm extends React.Component {
           placeholder="£"
           type="number"
           onChange={this.amountChange}
+          value={this.state.amount}
         />
 
         <label>Pay By:</label>
@@ -72,6 +81,7 @@ class SubmitForm extends React.Component {
           placeholder="Date"
           type="date"
           onChange={this.payByChange}
+          value={this.state.payBy}
         />
 
         <label>Customer:</label>
@@ -80,6 +90,7 @@ class SubmitForm extends React.Component {
           placeholder="Customer"
           type="text"
           onChange={this.customerChange}
+          value={this.state.customer}
         />
 
         <label>Services:</label>
@@ -88,6 +99,7 @@ class SubmitForm extends React.Component {
           placeholder="Services"
           type="text"
           onChange={this.servicesChange}
+          value={this.state.services}
         />
 
         <button type="submit">Submit</button>
