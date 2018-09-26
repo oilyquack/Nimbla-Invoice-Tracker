@@ -1,5 +1,6 @@
 import React from "react";
 import SubmitForm from "./SubmitForm";
+import Invoices from "./Invoices";
 
 class App extends React.Component {
   constructor() {
@@ -13,12 +14,9 @@ class App extends React.Component {
   }
 
   receiver(invoice) {
-    this.setState(
-      {
-        invoices: [...this.state.invoices, invoice]
-      },
-      () => console.log(this.state.invoices)
-    );
+    this.setState({
+      invoices: [...this.state.invoices, invoice]
+    });
   }
 
   render() {
@@ -28,6 +26,7 @@ class App extends React.Component {
           invoiceID={this.state.invoices.length}
           receiver={this.receiver}
         />
+        <Invoices invoices={this.state.invoices} />
       </div>
     );
   }
