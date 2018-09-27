@@ -8,13 +8,15 @@ class EditInvoice extends React.Component {
       amount: "",
       payBy: "",
       customer: "",
-      services: ""
+      services: "",
+      paid: null
     };
     this.amountChange = this.amountChange.bind(this);
     this.payByChange = this.payByChange.bind(this);
     this.customerChange = this.customerChange.bind(this);
     this.servicesChange = this.servicesChange.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   amountChange(event) {
@@ -41,6 +43,12 @@ class EditInvoice extends React.Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({
+      paid: event.target.value
+    });
+  }
+
   clickHandler(event) {
     if (event.target.name === "save") {
       const invoice = {
@@ -48,7 +56,8 @@ class EditInvoice extends React.Component {
         amount: this.state.amount,
         payBy: this.state.payBy,
         customer: this.state.customer,
-        services: this.state.services
+        services: this.state.services,
+        paid: this.state.paid
       };
 
       this.props.updateReceiver(invoice);
@@ -65,41 +74,57 @@ class EditInvoice extends React.Component {
   render() {
     return (
       <form onClick={this.clickHandler}>
-        <label>Amount:</label>
-        <input
-          id="amount-edit"
-          placeholder={this.props.amount}
-          type="number"
-          onChange={this.amountChange}
-          value={this.state.amount}
-        />
+        <label>
+          Amount:
+          <input
+            id="amount-edit"
+            placeholder={this.props.amount}
+            type="number"
+            onChange={this.amountChange}
+            value={this.state.amount}
+          />
+        </label>
 
-        <label>Pay By:</label>
-        <input
-          id="date-edit"
-          placeholder={this.props.payBy}
-          type="date"
-          onChange={this.payByChange}
-          value={this.state.payBy}
-        />
+        <label>
+          Pay By:
+          <input
+            id="date-edit"
+            placeholder={this.props.payBy}
+            type="date"
+            onChange={this.payByChange}
+            value={this.state.payBy}
+          />
+        </label>
 
-        <label>Customer:</label>
-        <input
-          id="customer-edit"
-          placeholder={this.props.customer}
-          type="text"
-          onChange={this.customerChange}
-          value={this.state.customer}
-        />
+        <label>
+          Customer:
+          <input
+            id="customer-edit"
+            placeholder={this.props.customer}
+            type="text"
+            onChange={this.customerChange}
+            value={this.state.customer}
+          />
+        </label>
 
-        <label>Services:</label>
-        <textarea
-          id="services-edit"
-          placeholder={this.props.services}
-          type="text"
-          onChange={this.servicesChange}
-          value={this.state.services}
-        />
+        <label>
+          Services:
+          <textarea
+            id="services-edit"
+            placeholder={this.props.services}
+            type="text"
+            onChange={this.servicesChange}
+            value={this.state.services}
+          />
+        </label>
+
+        <label>
+          Paid:
+          <select onChange={this.handleChange}>
+            <option value="true">Paid</option>
+            <option value="false">Unpaid</option>
+          </select>
+        </label>
 
         <button name="cancel">Cancel</button>
 

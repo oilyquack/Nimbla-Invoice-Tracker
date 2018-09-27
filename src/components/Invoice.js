@@ -28,6 +28,7 @@ class Invoice extends React.Component {
           payBy={this.props.payBy}
           customer={this.props.customer}
           services={this.props.services}
+          paid={this.props.paid}
           editReceiver={this.editReceiver}
         />
       );
@@ -39,6 +40,7 @@ class Invoice extends React.Component {
           payBy={this.props.payBy}
           customer={this.props.customer}
           services={this.props.services}
+          paid={this.props.paid}
           editReceiver={this.editReceiver}
           updateReceiver={this.props.updateReceiver}
         />

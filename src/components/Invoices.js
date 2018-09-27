@@ -14,6 +14,7 @@ function Invoices({ updateReceiver, invoices }) {
             payBy={invoice.payBy}
             customer={invoice.customer}
             services={invoice.services}
+            paid={invoice.paid}
           />
         );
       })}
