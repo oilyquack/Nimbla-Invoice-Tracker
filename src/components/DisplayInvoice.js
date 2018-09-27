@@ -16,11 +16,11 @@ class DisplayInvoice extends React.Component {
   render() {
     return (
       <div>
-        <h2>{this.props.invoiceId}</h2>
-        <p>{this.props.amount}</p>
-        <p>{this.props.payBy}</p>
-        <p>{this.props.customer}</p>
-        <p>{this.props.services}</p>
+        <h2>Invoice #: {this.props.invoiceId}</h2>
+        <p>£{this.props.amount}</p>
+        <p>Pay By: {this.props.payBy}</p>
+        <p>Customer: {this.props.customer}</p>
+        <p>Services: {this.props.services}</p>
         <button onClick={this.handleClick}>Edit</button>
       </div>
     );

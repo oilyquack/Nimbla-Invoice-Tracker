@@ -14,7 +14,7 @@ class EditInvoice extends React.Component {
     this.payByChange = this.payByChange.bind(this);
     this.customerChange = this.customerChange.bind(this);
     this.servicesChange = this.servicesChange.bind(this);
-    this.submitHandler = this.submitHandler.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   amountChange(event) {
@@ -41,25 +41,30 @@ class EditInvoice extends React.Component {
     });
   }
 
-  submitHandler(event) {
-    event.preventDefault();
+  clickHandler(event) {
+    if (event.target.name === "save") {
+      const invoice = {
+        id: this.props.invoiceId,
+        amount: this.state.amount,
+        payBy: this.state.payBy,
+        customer: this.state.customer,
+        services: this.state.services
+      };
 
-    const invoice = {
-      id: this.props.invoiceId,
-      amount: this.state.amount,
-      payBy: this.state.payBy,
-      customer: this.state.customer,
-      services: this.state.services
-    };
+      console.log(invoice);
 
-    console.log(invoice);
+      this.props.editReceiver("view");
+    }
+    if (event.target.name === "cancel") {
+      console.log("The invoice hasn't changed");
 
-    this.props.editReceiver("view");
+      this.props.editReceiver("view");
+    }
   }
 
   render() {
     return (
-      <form onSubmit={this.submitHandler}>
+      <form onClick={this.clickHandler}>
         <label>Amount:</label>
         <input
           id="amount-edit"
@@ -95,9 +100,10 @@ class EditInvoice extends React.Component {
           onChange={this.servicesChange}
           value={this.state.services}
         />
-        <button type="submit" name="save">
-          Save
-        </button>
+
+        <button name="cancel">Cancel</button>
+
+        <button name="save">Save</button>
       </form>
     );
   }
