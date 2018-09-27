@@ -15,7 +15,7 @@ class DisplayInvoice extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app__invoices__display">
         <h2>Invoice #: {this.props.invoiceId}</h2>
         <p>£{this.props.amount}</p>
         <p>Pay By: {this.props.payBy}</p>

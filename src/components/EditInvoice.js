@@ -73,7 +73,7 @@ class EditInvoice extends React.Component {
 
   render() {
     return (
-      <form onClick={this.clickHandler}>
+      <form className="app__invoices__edit" onClick={this.clickHandler}>
         <label>
           Amount:
           <input

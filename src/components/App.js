@@ -38,7 +38,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <SubmitForm
           invoiceID={this.state.invoices.length}
           invoiceReceiver={this.invoiceReceiver}
