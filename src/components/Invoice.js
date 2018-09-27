@@ -3,8 +3,8 @@ import DisplayInvoice from "./DisplayInvoice";
 import EditInvoice from "./EditInvoice";
 
 class Invoice extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       mode: "view"
@@ -40,6 +40,7 @@ class Invoice extends React.Component {
           customer={this.props.customer}
           services={this.props.services}
           editReceiver={this.editReceiver}
+          updateReceiver={this.props.updateReceiver}
         />
       );
     }

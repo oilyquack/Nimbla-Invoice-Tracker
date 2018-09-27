@@ -11,11 +11,28 @@ class App extends React.Component {
     };
 
     this.invoiceReceiver = this.invoiceReceiver.bind(this);
+    this.updateReceiver = this.updateReceiver.bind(this);
   }
 
   invoiceReceiver(invoice) {
     this.setState({
       invoices: [...this.state.invoices, invoice]
+    });
+  }
+
+  updateReceiver(invoice) {
+    const invoicesCopy = [...this.state.invoices];
+
+    const invoiceIndex = invoicesCopy.findIndex(
+      origInvoice => origInvoice.id === invoice.id
+    );
+
+    this.setState({
+      invoices: [
+        ...invoicesCopy.slice(0, invoiceIndex),
+        Object.assign({}, invoicesCopy[invoiceIndex], invoice),
+        ...invoicesCopy.slice(invoiceIndex + 1)
+      ]
     });
   }
 
@@ -26,7 +43,10 @@ class App extends React.Component {
           invoiceID={this.state.invoices.length}
           invoiceReceiver={this.invoiceReceiver}
         />
-        <Invoices invoices={this.state.invoices} />
+        <Invoices
+          updateReceiver={this.updateReceiver}
+          invoices={this.state.invoices}
+        />
       </div>
     );
   }

@@ -51,7 +51,7 @@ class EditInvoice extends React.Component {
         services: this.state.services
       };
 
-      console.log(invoice);
+      this.props.updateReceiver(invoice);
 
       this.props.editReceiver("view");
     }
