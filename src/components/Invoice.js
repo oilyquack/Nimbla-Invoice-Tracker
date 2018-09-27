@@ -35,6 +35,10 @@ class Invoice extends React.Component {
       return (
         <EditInvoice
           invoiceId={this.props.invoiceId}
+          amount={this.props.amount}
+          payBy={this.props.payBy}
+          customer={this.props.customer}
+          services={this.props.services}
           editReceiver={this.editReceiver}
         />
       );
