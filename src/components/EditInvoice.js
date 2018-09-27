@@ -16,7 +16,7 @@ class EditInvoice extends React.Component {
     this.customerChange = this.customerChange.bind(this);
     this.servicesChange = this.servicesChange.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.paidChange = this.paidChange.bind(this);
   }
 
   amountChange(event) {
@@ -43,7 +43,7 @@ class EditInvoice extends React.Component {
     });
   }
 
-  handleChange(event) {
+  paidChange(event) {
     this.setState({
       paid: event.target.value
     });
@@ -87,13 +87,7 @@ class EditInvoice extends React.Component {
 
         <label>
           Pay By:
-          <input
-            id="date-edit"
-            placeholder={this.props.payBy}
-            type="date"
-            onChange={this.payByChange}
-            value={this.state.payBy}
-          />
+          <input id="date-edit" type="date" onChange={this.payByChange} />
         </label>
 
         <label>
@@ -119,11 +113,8 @@ class EditInvoice extends React.Component {
         </label>
 
         <label>
-          Paid:
-          <select onChange={this.handleChange}>
-            <option value="true">Paid</option>
-            <option value="false">Unpaid</option>
-          </select>
+          Paid On:
+          <input id="paid-on-edit" type="date" onChange={this.paidChange} />
         </label>
 
         <button name="cancel">Cancel</button>

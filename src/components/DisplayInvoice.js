@@ -21,7 +21,10 @@ class DisplayInvoice extends React.Component {
         <p>Pay By: {this.props.payBy}</p>
         <p>Customer: {this.props.customer}</p>
         <p>Services: {this.props.services}</p>
-        <p>Paid: {this.props.paid ? "Paid" : "Unpaid"}</p>
+        <p>
+          Paid:{" "}
+          {this.props.paid != null ? `Paid on ${this.props.paid}` : "Unpaid"}
+        </p>
         <button onClick={this.handleClick}>Edit</button>
       </div>
     );

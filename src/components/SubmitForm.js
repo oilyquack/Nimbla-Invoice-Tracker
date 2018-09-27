@@ -51,7 +51,7 @@ class SubmitForm extends React.Component {
       payBy: this.state.payBy,
       customer: this.state.customer,
       services: this.state.services,
-      paid: false
+      paid: null
     };
 
     this.props.invoiceReceiver(invoice);
