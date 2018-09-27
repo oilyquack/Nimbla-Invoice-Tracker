@@ -47,7 +47,7 @@ class Invoices extends React.Component {
   render() {
     return (
       <div className="app__invoices">
-        <select onChange={this.changeHandler}>
+        <select defaultValue="all" onChange={this.changeHandler}>
           <option value="all">All</option>
           <option value="paid">Paid</option>
           <option value="unpaid">Unpaid</option>
