@@ -15,14 +15,13 @@ class DisplayInvoice extends React.Component {
 
   render() {
     return (
-      <div className="app__invoices__display">
-        <h2>Invoice #: {this.props.invoiceId}</h2>
-        <p>£{this.props.amount}</p>
+      <div className="app__invoices__display--read">
+        <h2>Invoice # {this.props.invoiceId}</h2>
+        <p>Amount: £{this.props.amount}</p>
         <p>Pay By: {this.props.payBy}</p>
         <p>Customer: {this.props.customer}</p>
         <p>Services: {this.props.services}</p>
         <p>
-          Paid:{" "}
           {this.props.paid != null ? `Paid on ${this.props.paid}` : "Unpaid"}
         </p>
         <button onClick={this.handleClick}>Edit</button>

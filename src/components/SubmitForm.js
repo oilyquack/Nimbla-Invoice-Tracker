@@ -99,6 +99,7 @@ class SubmitForm extends React.Component {
           id="services-input"
           placeholder="Services"
           type="text"
+          rows="5"
           onChange={this.servicesChange}
           value={this.state.services}
         />

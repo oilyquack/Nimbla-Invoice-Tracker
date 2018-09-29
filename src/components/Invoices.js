@@ -52,20 +52,22 @@ class Invoices extends React.Component {
           <option value="paid">Paid</option>
           <option value="unpaid">Unpaid</option>
         </select>
-        {this.state.invoicesDisplay.map(invoice => {
-          return (
-            <Invoice
-              updateReceiver={this.props.updateReceiver}
-              key={invoice.id}
-              invoiceId={invoice.id}
-              amount={invoice.amount}
-              payBy={invoice.payBy}
-              customer={invoice.customer}
-              services={invoice.services}
-              paid={invoice.paid}
-            />
-          );
-        })}
+        <div className="app__invoices__display">
+          {this.state.invoicesDisplay.map(invoice => {
+            return (
+              <Invoice
+                updateReceiver={this.props.updateReceiver}
+                key={invoice.id}
+                invoiceId={invoice.id}
+                amount={invoice.amount}
+                payBy={invoice.payBy}
+                customer={invoice.customer}
+                services={invoice.services}
+                paid={invoice.paid}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

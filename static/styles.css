@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app__form {
+  flex: 1;
+}
+
+.app__form,
+input,
+textarea {
+  width: 95vw;
+}
+
+.app__invoices {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+select {
+  width: 10vw;
+}
+
+.app__invoices__display {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  overflow: scroll;
+  margin: 0;
+}
+.app__invoices__display--read {
+  min-width: 300px;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.app__invoices__display--edit {
+  width: 95vw;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+h1,
+h2,
+label,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+p,
+input,
+textarea,
+select,
+option {
+  font-family: "Lato", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .app__form,
+  input,
+  textarea {
+    width: 45vw;
+  }
+
+  .app__form {
+    width: 48vw;
+  }
+
+  .app__invoices {
+    width: 48vw;
+    height: 100vh;
+  }
+
+  .app__invoices__display {
+    flex-direction: column;
+  }
+
+  .app__invoices__display--read {
+    width: 48vw;
+    margin: 10px;
+  }
+
+  .app__invoices__display--edit {
+    width: 48vw;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 960px) {
+}
+
+@media (min-width: 1200px) {
+}
