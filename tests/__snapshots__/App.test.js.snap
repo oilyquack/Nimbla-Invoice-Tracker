@@ -15,6 +15,7 @@ exports[`matches the snapshot 1`] = `
       id="amount-input"
       onChange={[Function]}
       placeholder="£"
+      required={true}
       type="number"
       value=""
     />
@@ -25,6 +26,7 @@ exports[`matches the snapshot 1`] = `
       id="date-input"
       onChange={[Function]}
       placeholder="Date"
+      required={true}
       type="date"
       value=""
     />
@@ -35,6 +37,7 @@ exports[`matches the snapshot 1`] = `
       id="customer-input"
       onChange={[Function]}
       placeholder="Customer"
+      required={true}
       type="text"
       value=""
     />
@@ -45,6 +48,7 @@ exports[`matches the snapshot 1`] = `
       id="services-input"
       onChange={[Function]}
       placeholder="Services"
+      required={true}
       rows="5"
       type="text"
       value=""
@@ -59,8 +63,8 @@ exports[`matches the snapshot 1`] = `
     className="app__invoices"
   >
     <select
-      defaultValue="all"
       onChange={[Function]}
+      value=""
     >
       <option
         value="all"
@@ -68,6 +72,7 @@ exports[`matches the snapshot 1`] = `
         All
       </option>
       <option
+        defaultValue={true}
         value="paid"
       >
         Paid

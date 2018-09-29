@@ -11,7 +11,6 @@ exports[`matches the snapshot 1`] = `
       id="amount-edit"
       onChange={[Function]}
       type="number"
-      value=""
     />
   </label>
   <label>
@@ -28,7 +27,6 @@ exports[`matches the snapshot 1`] = `
       id="customer-edit"
       onChange={[Function]}
       type="text"
-      value=""
     />
   </label>
   <label>
@@ -37,7 +35,6 @@ exports[`matches the snapshot 1`] = `
       id="services-edit"
       onChange={[Function]}
       type="text"
-      value=""
     />
   </label>
   <label>

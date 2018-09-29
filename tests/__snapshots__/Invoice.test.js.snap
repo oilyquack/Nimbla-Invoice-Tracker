@@ -4,24 +4,46 @@ exports[`matches the snapshot 1`] = `
 <div
   className="app__invoices__display--read"
 >
-  <h2>
-    Invoice # 
-  </h2>
+  <label>
+    Invoice #
+  </label>
   <p>
-    Amount: £
+    <span
+      className="display-title"
+    >
+      Amount:
+    </span>
+     £
   </p>
   <p>
-    Pay By: 
+    <span
+      className="display-title"
+    >
+      Pay By:
+    </span>
+     
   </p>
   <p>
-    Customer: 
+    <span
+      className="display-title"
+    >
+      Customer:
+    </span>
+     
   </p>
   <p>
-    Services: 
+    <span
+      className="display-title"
+    >
+      Services:
+    </span>
+     
   </p>
-  <p>
-    Unpaid
-  </p>
+  <span
+    className="display-title"
+  >
+    UNPAID
+  </span>
   <button
     onClick={[Function]}
   >

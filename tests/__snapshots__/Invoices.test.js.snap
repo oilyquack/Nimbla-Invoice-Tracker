@@ -5,8 +5,8 @@ exports[`matches the snapshot 1`] = `
   className="app__invoices"
 >
   <select
-    defaultValue="all"
     onChange={[Function]}
+    value=""
   >
     <option
       value="all"
@@ -14,6 +14,7 @@ exports[`matches the snapshot 1`] = `
       All
     </option>
     <option
+      defaultValue={true}
       value="paid"
     >
       Paid
