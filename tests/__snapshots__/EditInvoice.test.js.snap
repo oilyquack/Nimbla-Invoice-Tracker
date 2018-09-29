@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<form
+  className="app__invoices__display--edit"
+  onClick={[Function]}
+>
+  <label>
+    Amount:
+    <input
+      id="amount-edit"
+      onChange={[Function]}
+      type="number"
+      value=""
+    />
+  </label>
+  <label>
+    Pay By:
+    <input
+      id="date-edit"
+      onChange={[Function]}
+      type="date"
+    />
+  </label>
+  <label>
+    Customer:
+    <input
+      id="customer-edit"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    Services:
+    <textarea
+      id="services-edit"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    Paid On:
+    <input
+      id="paid-on-edit"
+      onChange={[Function]}
+      type="date"
+    />
+  </label>
+  <button
+    name="cancel"
+  >
+    Cancel
+  </button>
+  <button
+    name="save"
+  >
+    Save
+  </button>
+</form>
+`;

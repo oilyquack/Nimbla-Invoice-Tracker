@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="app__invoices"
+>
+  <select
+    defaultValue="all"
+    onChange={[Function]}
+  >
+    <option
+      value="all"
+    >
+      All
+    </option>
+    <option
+      value="paid"
+    >
+      Paid
+    </option>
+    <option
+      value="unpaid"
+    >
+      Unpaid
+    </option>
+  </select>
+  <div
+    className="app__invoices__display"
+  />
+</div>
+`;

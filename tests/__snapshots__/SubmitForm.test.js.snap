@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<form
+  className="app__form"
+  onSubmit={[Function]}
+>
+  <label>
+    Amount:
+  </label>
+  <input
+    id="amount-input"
+    onChange={[Function]}
+    placeholder="£"
+    type="number"
+    value=""
+  />
+  <label>
+    Pay By:
+  </label>
+  <input
+    id="date-input"
+    onChange={[Function]}
+    placeholder="Date"
+    type="date"
+    value=""
+  />
+  <label>
+    Customer:
+  </label>
+  <input
+    id="customer-input"
+    onChange={[Function]}
+    placeholder="Customer"
+    type="text"
+    value=""
+  />
+  <label>
+    Services:
+  </label>
+  <textarea
+    id="services-input"
+    onChange={[Function]}
+    placeholder="Services"
+    rows="5"
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

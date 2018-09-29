@@ -4,6 +4,8 @@
 
 body {
   margin: 0;
+  color: #3f3f3f;
+  background: rgb(230, 230, 230);
 }
 
 .app {
@@ -15,6 +17,8 @@ body {
 
 .app__form {
   flex: 1;
+  padding: 5px;
+  border-bottom: 1px dashed black;
 }
 
 .app__form,
@@ -27,6 +31,7 @@ textarea {
   display: flex;
   flex: 2;
   flex-direction: column;
+  padding: 5px;
 }
 
 select {
@@ -36,20 +41,26 @@ select {
 .app__invoices__display {
   display: flex;
   flex-direction: row;
-  padding: 15px;
+  padding: 5px;
   overflow: scroll;
   margin: 0;
 }
 .app__invoices__display--read {
   min-width: 300px;
-  margin: 10px;
-  padding: 10px 20px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  background: #f6ebeb;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .app__invoices__display--edit {
-  width: 95vw;
-  margin: 10px;
-  padding: 10px 20px;
+  width: 98vw;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  background: #f6ebeb;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1,
@@ -80,6 +91,8 @@ option {
 
   .app__form {
     width: 48vw;
+    border-bottom: 0px;
+    border-right: 1px dashed black;
   }
 
   .app__invoices {
@@ -100,10 +113,4 @@ option {
     width: 48vw;
     margin: 10px;
   }
-}
-
-@media (min-width: 960px) {
-}
-
-@media (min-width: 1200px) {
 }

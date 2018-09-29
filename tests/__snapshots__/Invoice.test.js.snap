@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<div
+  className="app__invoices__display--read"
+>
+  <h2>
+    Invoice # 
+  </h2>
+  <p>
+    Amount: £
+  </p>
+  <p>
+    Pay By: 
+  </p>
+  <p>
+    Customer: 
+  </p>
+  <p>
+    Services: 
+  </p>
+  <p>
+    Unpaid
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Edit
+  </button>
+</div>
+`;
