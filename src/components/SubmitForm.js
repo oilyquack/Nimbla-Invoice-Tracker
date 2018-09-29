@@ -105,6 +105,7 @@ class SubmitForm extends React.Component {
           rows="5"
           onChange={this.servicesChange}
           value={this.state.services}
+          maxLength="30"
           required
         />
 

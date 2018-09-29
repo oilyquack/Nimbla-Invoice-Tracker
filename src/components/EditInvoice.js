@@ -123,6 +123,7 @@ class EditInvoice extends React.Component {
             placeholder={this.props.services}
             type="text"
             onChange={this.servicesChange}
+            maxLength="30"
             value={this.state.services}
           />
         </label>
