@@ -98,11 +98,11 @@ select {
 }
 
 .overdue {
-  background: #ffe6e6;
+  background: #f6ebeb;
 }
 
 .paid {
-  background: #eaffe0;
+  background: #eceeba;
 }
 
 .app__invoices__display--edit input {
