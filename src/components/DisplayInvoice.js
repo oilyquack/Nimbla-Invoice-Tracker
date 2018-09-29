@@ -1,10 +1,25 @@
 import React from "react";
+import cx from "classnames";
 
 class DisplayInvoice extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      overdue: false
+    };
+
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    const today = new Date();
+    const due = new Date(this.props.payBy);
+    if (due < today) {
+      this.setState({
+        overdue: true
+      });
+    }
   }
 
   handleClick(event) {
@@ -14,8 +29,12 @@ class DisplayInvoice extends React.Component {
   }
 
   render() {
+    const classes = cx("app__invoices__display--read", {
+      overdue: this.state.overdue,
+      paid: this.props.paid !== null
+    });
     return (
-      <div className="app__invoices__display--read">
+      <div className={classes}>
         <label>Invoice #{this.props.invoiceId}</label>
         <p>
           <span className="display-title">Amount:</span> £{this.props.amount}

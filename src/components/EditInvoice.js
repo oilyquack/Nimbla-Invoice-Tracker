@@ -55,7 +55,7 @@ class EditInvoice extends React.Component {
 
   paidChange(event) {
     this.setState({
-      paid: event.target.value
+      paid: event.target.value.length > 1 ? event.target.value : null
     });
   }
 
@@ -67,11 +67,10 @@ class EditInvoice extends React.Component {
         payBy: this.state.payBy,
         customer: this.state.customer,
         services: this.state.services,
-        paid: this.state.paid === "" ? null : this.state.paid
+        paid: this.state.paid
       };
 
       this.props.updateReceiver(invoice);
-
       this.props.editReceiver("view");
     }
     if (event.target.name === "cancel") {

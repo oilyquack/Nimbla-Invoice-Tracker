@@ -97,6 +97,14 @@ select {
   margin: 5px;
 }
 
+.overdue {
+  background: #ffe6e6;
+}
+
+.paid {
+  background: #eaffe0;
+}
+
 .app__invoices__display--edit input {
   width: 250px;
 }
