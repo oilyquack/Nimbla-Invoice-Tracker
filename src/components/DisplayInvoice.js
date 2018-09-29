@@ -35,7 +35,7 @@ class DisplayInvoice extends React.Component {
     });
     return (
       <div className={classes}>
-        <label>Invoice #{this.props.invoiceId}</label>
+        <label>Invoice {this.props.invoiceId}</label>
         <p>
           <span className="display-title">Amount:</span> £{this.props.amount}
         </p>
