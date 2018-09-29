@@ -91,7 +91,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 80vw;
   padding-bottom: 8px;
   border: 1.5px solid #f9e547;
   margin: 5px;
@@ -105,4 +105,26 @@ select {
   width: 250px;
   max-height: 12vh;
   resize: vertical;
+}
+
+@media (min-width: 768px) {
+  .app__invoices__display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .app__invoices__display--read,
+  .app__invoices__display--edit {
+    width: 30vw;
+  }
+
+  .app__invoices__display--edit input {
+    width: 28vw;
+  }
+
+  .app__invoices__display--edit textarea {
+    width: 28vw;
+    max-height: 12vh;
+    resize: vertical;
+  }
 }
