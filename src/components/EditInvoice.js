@@ -9,8 +9,7 @@ class EditInvoice extends React.Component {
       payBy: "",
       customer: "",
       services: "",
-      paid: null,
-      invalid: false
+      paid: null
     };
     this.amountChange = this.amountChange.bind(this);
     this.payByChange = this.payByChange.bind(this);
@@ -18,6 +17,16 @@ class EditInvoice extends React.Component {
     this.servicesChange = this.servicesChange.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.paidChange = this.paidChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      amount: this.props.amount,
+      payBy: this.props.payBy,
+      customer: this.props.customer,
+      services: this.props.services,
+      paid: this.props.paid === null ? null : this.props.paid
+    });
   }
 
   amountChange(event) {
@@ -58,7 +67,7 @@ class EditInvoice extends React.Component {
         payBy: this.state.payBy,
         customer: this.state.customer,
         services: this.state.services,
-        paid: this.state.paid
+        paid: this.state.paid === "" ? null : this.state.paid
       };
 
       this.props.updateReceiver(invoice);
@@ -66,10 +75,6 @@ class EditInvoice extends React.Component {
       this.props.editReceiver("view");
     }
     if (event.target.name === "cancel") {
-      this.setState({
-        invalid: false
-      });
-
       this.props.editReceiver("view");
     }
   }
@@ -81,7 +86,6 @@ class EditInvoice extends React.Component {
         onClick={this.clickHandler}
       >
         <label>
-          {this.state.invalid ? <h2>NAH</h2> : null}
           Amount:
           <input
             id="amount-edit"
