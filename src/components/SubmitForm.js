@@ -74,6 +74,7 @@ class SubmitForm extends React.Component {
           type="number"
           onChange={this.amountChange}
           value={this.state.amount}
+          required
         />
 
         <label>Pay By:</label>
@@ -83,6 +84,7 @@ class SubmitForm extends React.Component {
           type="date"
           onChange={this.payByChange}
           value={this.state.payBy}
+          required
         />
 
         <label>Customer:</label>
@@ -92,6 +94,7 @@ class SubmitForm extends React.Component {
           type="text"
           onChange={this.customerChange}
           value={this.state.customer}
+          required
         />
 
         <label>Services:</label>
@@ -102,6 +105,7 @@ class SubmitForm extends React.Component {
           rows="5"
           onChange={this.servicesChange}
           value={this.state.services}
+          required
         />
 
         <button type="submit">Submit</button>

@@ -6,15 +6,17 @@ class Invoices extends React.Component {
     super();
 
     this.state = {
-      invoicesDisplay: []
+      invoicesDisplay: [],
+      filterBy: ""
     };
     this.changeHandler = this.changeHandler.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.invoices !== this.props.invoices) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.invoices != this.props.invoices) {
       this.setState({
-        invoicesDisplay: [...this.props.invoices]
+        invoicesDisplay: [...this.props.invoices],
+        filterBy: "all"
       });
     }
   }
@@ -27,7 +29,8 @@ class Invoices extends React.Component {
       );
 
       this.setState({
-        invoicesDisplay: [...invoicesSort]
+        invoicesDisplay: [...invoicesSort],
+        filterBy: "unpaid"
       });
     }
     if (event.target.value === "paid") {
@@ -35,21 +38,25 @@ class Invoices extends React.Component {
       const invoicesSort = invoicesCopy.filter(invoice => invoice.paid != null);
 
       this.setState({
-        invoicesDisplay: [...invoicesSort]
+        invoicesDisplay: [...invoicesSort],
+        filterBy: "paid"
       });
     }
     if (event.target.value === "all") {
       this.setState({
-        invoicesDisplay: [...this.props.invoices]
+        invoicesDisplay: [...this.props.invoices],
+        filterBy: "all"
       });
     }
   }
   render() {
     return (
       <div className="app__invoices">
-        <select defaultValue="all" onChange={this.changeHandler}>
+        <select value={this.state.filterBy} onChange={this.changeHandler}>
           <option value="all">All</option>
-          <option value="paid">Paid</option>
+          <option value="paid" defaultValue>
+            Paid
+          </option>
           <option value="unpaid">Unpaid</option>
         </select>
         <div className="app__invoices__display">

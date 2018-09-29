@@ -9,7 +9,8 @@ class EditInvoice extends React.Component {
       payBy: "",
       customer: "",
       services: "",
-      paid: null
+      paid: null,
+      invalid: false
     };
     this.amountChange = this.amountChange.bind(this);
     this.payByChange = this.payByChange.bind(this);
@@ -65,7 +66,9 @@ class EditInvoice extends React.Component {
       this.props.editReceiver("view");
     }
     if (event.target.name === "cancel") {
-      console.log("The invoice hasn't changed");
+      this.setState({
+        invalid: false
+      });
 
       this.props.editReceiver("view");
     }
@@ -78,6 +81,7 @@ class EditInvoice extends React.Component {
         onClick={this.clickHandler}
       >
         <label>
+          {this.state.invalid ? <h2>NAH</h2> : null}
           Amount:
           <input
             id="amount-edit"
@@ -90,7 +94,12 @@ class EditInvoice extends React.Component {
 
         <label>
           Pay By:
-          <input id="date-edit" type="date" onChange={this.payByChange} />
+          <input
+            defaultValue={this.props.payBy}
+            id="date-edit"
+            type="date"
+            onChange={this.payByChange}
+          />
         </label>
 
         <label>
@@ -117,7 +126,12 @@ class EditInvoice extends React.Component {
 
         <label>
           Paid On:
-          <input id="paid-on-edit" type="date" onChange={this.paidChange} />
+          <input
+            defaultValue={this.props.paid}
+            id="paid-on-edit"
+            type="date"
+            onChange={this.paidChange}
+          />
         </label>
 
         <button name="cancel">Cancel</button>
